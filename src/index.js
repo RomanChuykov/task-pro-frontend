@@ -9,7 +9,7 @@ import { BrowserRouter } from "react-router-dom";
 import { PersistGate } from "redux-persist/integration/react";
 
 const theme = {
-	colors: {
+	colors: {//кольори для реєстрації і логіну
 	  white: '#fff',
 	  darkTextColor: '#161616',
 	  greyTextColor: 'rgba(255, 255, 255, 0.3)',
@@ -18,7 +18,7 @@ const theme = {
 	  darkInputBgn: '#1f1f1f',
 	  shadowColor: 'rgba(22, 22, 22, 0.08)',   
 	},
-	violetColors: {
+	violetColors: {//кольори для VioletTheme
 	  violetFill: '#d6d8ff',//фон Screen Page
 	  accentColor: '#5255bc',//button
 	  hoverViolet: '#7b7ede',//hover button
