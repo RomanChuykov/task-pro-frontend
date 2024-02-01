@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/NickTsalyn/task-pro-frontend/static/css/main.d73ba864.css",
+    "main.js": "/NickTsalyn/task-pro-frontend/static/js/main.e4e2ddaa.js",
+    "index.html": "/NickTsalyn/task-pro-frontend/index.html",
+    "main.d73ba864.css.map": "/NickTsalyn/task-pro-frontend/static/css/main.d73ba864.css.map",
+    "main.e4e2ddaa.js.map": "/NickTsalyn/task-pro-frontend/static/js/main.e4e2ddaa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d73ba864.css",
+    "static/js/main.e4e2ddaa.js"
+  ]
+}
