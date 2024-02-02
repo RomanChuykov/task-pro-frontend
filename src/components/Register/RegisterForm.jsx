@@ -1,12 +1,20 @@
 import * as Yup from 'yup';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Formik, ErrorMessage, Form } from 'formik';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
-import './RegisterForm.css';
+import './RegisterFormStyles.js';
 import { register } from 'redux/auth/operations';
 import { selectIsLoading } from 'redux/auth/selectors';
+import {
+  FormError,
+  FormField,
+  FormIcon,
+  FormWrapper,
+  RegisterFormWrapper,
+  WelcomeButton,
+} from './RegisterFormStyles.js';
 
 const RegisterSchema = Yup.object().shape({
   name: Yup.string()
@@ -55,52 +63,47 @@ const RegisterForm = () => {
       validationSchema={RegisterSchema}
       onSubmit={onSubmit}
     >
-      <Form className="register-form">
-        <div className="form-wrapper">
-          <ErrorMessage name="name" component="div" className="form-error" />
-          <Field
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Enter your name"
-            autoComplete="off"
-            className="form-field"
-          />
-        </div>
-        <div className="form-wrapper">
-          <ErrorMessage name="email" component="div" className="form-error" />
-          <Field
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter your email"
-            autoComplete="off"
-            className="form-field"
-          />
-        </div>
-        <div className="form-wrapper">
-          <ErrorMessage
-            className="form-error"
-            name="password"
-            component="div"
-          />
-          <Field
-            type={showPassword ? 'text' : 'password'}
-            id="password"
-            name="password"
-            placeholder="Create a password"
-            autoComplete="off"
-            className="form-field"
-          />
-          <span className="form-icon" onClick={handleTogglePassword}>
-            {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
-          </span>
-        </div>
+      <RegisterFormWrapper>
+        <Form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <FormWrapper>
+            <ErrorMessage name="name" component={FormError} />
+            <FormField
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              autoComplete="off"
+            />
+          </FormWrapper>
+          <FormWrapper>
+            <ErrorMessage name="email" component={FormError} />
+            <FormField
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              autoComplete="off"
+            />
+          </FormWrapper>
+          <FormWrapper>
+            <ErrorMessage name="password" component={FormError} />
+            <FormField
+              type={showPassword ? 'text' : 'password'}
+              id="password"
+              name="password"
+              placeholder="Create a password"
+              autoComplete="off"
+            />
+            <FormIcon onClick={handleTogglePassword}>
+              {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+            </FormIcon>
+          </FormWrapper>
 
-        <button className="welcome-button" type="submit">
-          {loading ? 'Register Now' : 'Register now'}
-        </button>
-      </Form>
+          <WelcomeButton type="submit">
+            {loading ? 'Register Now' : 'Register now'}
+          </WelcomeButton>
+        </Form>
+      </RegisterFormWrapper>
     </Formik>
   );
 };
