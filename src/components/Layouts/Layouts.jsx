@@ -9,14 +9,14 @@ const StyledLayout = styled.div`
 `;
 
 const StyledWelcomeLayout = styled(StyledLayout)`
-  background-color: linear-gradient(180deg, rgba(196, 196, 196, 0) 25%, ${p => p.theme.colors.lightGeen} 92,19%);
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0.25) , ${p => p.theme.colors.lightGreen} );
 `;
 
 export const WelcomeLayout = () => {
   return (
     <StyledWelcomeLayout>     
       <Suspense fallback={null}> 
-        		<Outlet />   
+        <Outlet />   
       </Suspense>
     </StyledWelcomeLayout>
   );
@@ -28,7 +28,7 @@ export const HomeLayout = () => {
 	    <div>HeaderHomePage</div>( шапка HomePage)
 	    <div>Sidebar</div>
     	<Suspense fallback={null}>
-       		 <Outlet />
+       	<Outlet />
       </Suspense>     
     </StyledLayout>
   );
