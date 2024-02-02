@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { ReactComponent as CloseIcon } from '../close-icon.svg';
-// 
+//
 import '../ColumnModal.css';
 
 export const EditColumnModal = ({
@@ -20,14 +20,14 @@ export const EditColumnModal = ({
       ariaHideApp={false}
     >
       <button className="modal-close-button" onClick={() => onClose()}>
-        <CloseIcon />
+        <CloseIcon className="modal-close-icon" />
       </button>
       {children}
-      {submitButton && (
+      {/* {submitButton && (
         <button className="modal-submit-button" onClick={() => onClose()}>
           {submitButton}
         </button>
-      )}
+      )} */}
     </Modal>
   );
 };

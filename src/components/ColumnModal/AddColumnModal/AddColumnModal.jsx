@@ -16,14 +16,14 @@ export const AddColumnModal = ({ isOpen, onClose, submitButton, children }) => {
       ariaHideApp={false}
     >
       <button className="modal-close-button" onClick={() => onClose()}>
-        <CloseIcon />
+        <CloseIcon className="modal-close-icon" />
       </button>
       {children}
-      {submitButton && (
+      {/* {submitButton && (
         <button className="modal-submit-button" onClick={() => onClose()}>
           {submitButton}
         </button>
-      )}
+      )} */}
     </Modal>
   );
 };
