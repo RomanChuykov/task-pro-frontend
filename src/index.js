@@ -42,7 +42,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 			{/* <PersistGate persistor={persistor}> */}
 				<BrowserRouter basename="NickTsalyn/task-pro-frontend">
 					<ThemeProvider theme={theme}>
-						<App />
+						<App >
+							<button>
+								<svg>
+									<use href="/public/icons.svg#icon-bell-01"/>
+								</svg>
+							</button>
+						</App>
 					</ThemeProvider>	
 				</BrowserRouter>
 			{/* </PersistGate> */}
