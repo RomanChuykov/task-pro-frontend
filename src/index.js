@@ -7,6 +7,9 @@ import { Provider } from "react-redux";
 import { store, persistor } from "redux/store";
 import { BrowserRouter } from "react-router-dom";
 import { PersistGate } from "redux-persist/integration/react";
+import './fonts/poppins-v20-latin-regular.woff2'
+import './fonts/poppins-v20-latin-500.woff2'
+import './fonts/poppins-v20-latin-600.woff2'
 
 const theme = {
 	colors: {//кольори для реєстрації і логіну
@@ -35,14 +38,14 @@ const theme = {
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
-		<Provider store={store}>
-			<PersistGate persistor={persistor}>
-				<BrowserRouter basename="/">
+		{/* <Provider store={store}> */}
+			{/* <PersistGate persistor={persistor}> */}
+				<BrowserRouter basename="NickTsalyn/task-pro-frontend">
 					<ThemeProvider theme={theme}>
 						<App />
 					</ThemeProvider>	
 				</BrowserRouter>
-			</PersistGate>
-		</Provider>
+			{/* </PersistGate> */}
+		{/* </Provider> */}
 	</React.StrictMode>
 );
