@@ -3,10 +3,10 @@ import ReactDOM from "react-dom/client";
 import { ThemeProvider } from 'styled-components';
 import { App } from "App";
 import "./index.css";
-import { Provider } from "react-redux";
-import { store, persistor } from "redux/store";
+// import { Provider } from "react-redux";
+// import { store, persistor } from "redux/store";
 import { BrowserRouter } from "react-router-dom";
-import { PersistGate } from "redux-persist/integration/react";
+// import { PersistGate } from "redux-persist/integration/react";
 import './fonts/poppins-v20-latin-regular.woff2'
 import './fonts/poppins-v20-latin-500.woff2'
 import './fonts/poppins-v20-latin-600.woff2'
