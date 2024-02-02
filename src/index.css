@@ -1,8 +1,4 @@
-@import-normalize; /* bring in normalize.css styles */
-
-
-
-
+@import-normalize; 
 
 :root {
   --background: #3aa6b9;
