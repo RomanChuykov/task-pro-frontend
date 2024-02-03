@@ -38,13 +38,18 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 302px;
+  max-width: 287px;
+  height: 173px;
   padding: 24px;
   background-color: #fcfcfc;
   border-radius: 8px;
   filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.25));
   transform: translateY(50px);
   transition: transform 0.3s;
+  @media screen and (min-width: 768px) {
+    max-width: 302px;
+    padding: 24px;
+  }
 }
 
 .ReactModal__Content--after-open {
@@ -66,11 +71,11 @@
   transition: stroke 0.3s;
 }
 
-.modal-close-button:hover {
+/* .modal-close-button:hover {
   stroke: #161616;
-}
+} */
 
-.modal-close-icon {
+/* .modal-close-icon {
   position: relative;
   top: 14px;
   right: 14px;
@@ -78,8 +83,7 @@
   height: 28px;
   stroke: #161616;
   transition: stroke 0.3s;
-}
-
+} */
 
 /* .modal-submit-button {
   width: 180px;
@@ -92,4 +96,3 @@
   transition: background-color 0.3s;
 }
  */
-

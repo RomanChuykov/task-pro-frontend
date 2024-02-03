@@ -7,8 +7,8 @@ export const StyledSvgClose = styled.svg`
   position: absolute;
   align-items: center;
   justify-content: center;
-  width: 9px;
-  height: 9px;
+  width: 12px;
+  height: 12px;
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
