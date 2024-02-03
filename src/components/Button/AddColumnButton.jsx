@@ -2,8 +2,43 @@ import React, { useState } from 'react';
 import { AddColumnModal } from '../ColumnModal/AddColumnModal/AddColumnModal';
 import { EditColumnModal } from '../ColumnModal/EditColumnModal/EditColumnModal';
 import { Button } from 'components/Button/Button';
-
+import sprite from '../../images/icons.svg';
+import styled from 'styled-components';
 import './AddColumnButton.css';
+
+const StyledSvgWhitePlus = styled.svg`
+  fill: ${props => props.theme.colors.white};
+  stroke: ${props => props.theme.colors.white};
+  display: flex;
+  /* position: absolute; */
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  /* top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%); */
+  border: none;
+
+  /* transition: background-color 0.3s ease; */
+`;
+
+const StyledSvgDarkPlus = styled.svg`
+  fill: ${props => props.theme.colors.darkTextColor};
+  stroke: ${props => props.theme.colors.darkTextColor};
+  display: flex;
+  /* position: absolute; */
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  /* top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%); */
+  border: none;
+
+  /* transition: background-color 0.3s ease; */
+`;
 
 export const AddColumnButton = () => {
   const [modalAddColumnIsOpen, setModalAddColumnIsOpen] = useState(false);
@@ -22,7 +57,9 @@ export const AddColumnButton = () => {
           onClick={() => setModalAddColumnIsOpen(true)}
         >
           <span className="iconBlackWrap">
-            {/* <Icon id={'icon-plus'} className=iconWhite /> */}
+            <StyledSvgWhitePlus>
+              <use xlinkHref={`${sprite}#icon-plus`}></use>
+            </StyledSvgWhitePlus>
           </span>
           Add another column
         </button>
@@ -31,6 +68,11 @@ export const AddColumnButton = () => {
           className="modal-show-button"
           onClick={() => setModalEditColumnIsOpen(true)}
         >
+          <span className="iconBlackWrap">
+            <StyledSvgWhitePlus>
+              <use xlinkHref={`${sprite}#icon-plus`}></use>
+            </StyledSvgWhitePlus>
+          </span>
           Edit Column
         </button>
 
@@ -49,9 +91,15 @@ export const AddColumnButton = () => {
                 className="addColumn_input"
                 autoFocus
               />
-              <Button type="submit" className="addColumn_btn">
+              <Button
+                type="submit"
+                className="addColumn_btn"
+                
+              >
                 <span className="iconWhiteWrap">
-                  {/* <Icon id={'icon-plus'} className=iconBlack /> */}
+                  <StyledSvgDarkPlus>
+                    <use xlinkHref={`${sprite}#icon-plus`}></use>
+                  </StyledSvgDarkPlus>
                 </span>
                 Add
               </Button>
@@ -78,8 +126,10 @@ export const AddColumnButton = () => {
                 autoFocus
               />
               <Button type="submit" className="addColumn_btn">
-                <span className="iconWrap">
-                  {/* <Icon id={'icon-plus'} className={css.icon} /> */}
+                <span className="iconWhiteWrap">
+                  <StyledSvgDarkPlus>
+                    <use xlinkHref={`${sprite}#icon-plus`}></use>
+                  </StyledSvgDarkPlus>
                 </span>
                 Add
               </Button>

@@ -38,10 +38,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  /* height: 173px; */
-  /* max-width: 40.625rem; */
   max-width: 302px;
-  /* padding: 60px 24px 50px 24px; */
   padding: 24px;
   background-color: #fcfcfc;
   border-radius: 8px;
@@ -64,7 +61,8 @@
   right: 14px;
   width: 18px;
   height: 18px;
-  stroke: #161616;
+  border-color: transparent;
+  background-color: #fcfcfc;
   transition: stroke 0.3s;
 }
 
@@ -81,25 +79,7 @@
   stroke: #161616;
   transition: stroke 0.3s;
 }
-/* .modal-content h2 {
-  margin-bottom: 18px;
-  font-size: 36px;
-  color: #ff6700;
-  text-align: center;
-}
 
-.modal-content p {
-  margin-bottom: 33px;
-  font-size: 24px;
-  color: #2e2e2e;
-  text-align: center;
-}
-
-.modal-content img {
-  display: block;
-  margin-bottom: 45px;
-  width: 210px;
-} */
 
 /* .modal-submit-button {
   width: 180px;
@@ -111,67 +91,5 @@
   filter: drop-shadow(0 0 7px rgba(255, 103, 0, 0.3));
   transition: background-color 0.3s;
 }
+ */
 
-.modal-submit-button:hover {
-  background-color: #c24e00;
-} */
-
-/* .container {
-  width: 335px;
-} */
-/* .addColumn_title {
-  color: #161616;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: -0.36px;
-  margin-bottom: 24px;
-}
-
-.addColumn_input {
-  display: block;
-  width: 100%;
-  padding: 14px 18px;
-  margin-bottom: 24px;
-  opacity: 0.4;
-
-  border-radius: 8px;
-  border: 1px solid #5255bc;
-  background-color: transparent;
-  color: var(--text-secondary-color);
-  &:focus {
-    opacity: 1;
-    outline: 1px solid #5255bc;
-  }
-}
-
-.addColumn_btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  padding: 10px 0;
-
-  background-color: #5255bc;
-  color: #ffffff;
-
-  border-radius: 8px;
-}
-
-.iconWrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  background-color: #ffffff;
-  border-radius: 8px;
-}
-
-.icon {
-  width: 14px;
-  height: 14px;
-  stroke: #161616;
-} */
