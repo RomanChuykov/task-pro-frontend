@@ -1,7 +1,11 @@
 import React from 'react';
 import Modal from 'react-modal';
-import { ReactComponent as CloseIcon } from '../close-icon.svg';
+// import { ReactComponent as CloseIcon } from '../close-icon.svg';
+import sprite from '../../../images/icons.svg';
+import styled from 'styled-components';
 import '../ColumnModal.css';
+
+const styledSvgPlus = 
 
 Modal.setAppElement('#root');
 
@@ -16,7 +20,7 @@ export const AddColumnModal = ({ isOpen, onClose, submitButton, children }) => {
       ariaHideApp={false}
     >
       <button className="modal-close-button" onClick={() => onClose()}>
-        <CloseIcon className="modal-close-icon" />
+        {/* <CloseIcon className="modal-close-icon" /> */}
       </button>
       {children}
       {/* {submitButton && (
