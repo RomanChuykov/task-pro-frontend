@@ -44,7 +44,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 			<PersistGate persistor={persistor}>
 				<BrowserRouter basename="NickTsalyn/task-pro-frontend">
 					<ThemeProvider theme={theme}>
-						<App />							
+          <App></App>							
 					</ThemeProvider>	
 				</BrowserRouter>
 			</PersistGate>
