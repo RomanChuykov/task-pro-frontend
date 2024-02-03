@@ -1,7 +1,9 @@
-import { WelcomePage } from 'Pages/WelcomePage';
+import WelcomePage  from 'Pages/WelcomePage';
+import Auth from 'components/Auth/Auth';
 import { Layout } from 'components/Layout/Layout';
+import RegisterForm from 'components/Register/RegisterForm';
 import { Route, Routes } from 'react-router-dom';
-import {AddColumnButton} from './components/Button/AddColumnButton'
+
 
 export const App = () => {
   return (
@@ -9,14 +11,15 @@ export const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<WelcomePage />} />
-    //     {/* <Route path="/auth/:id">
-    //       <Route path="/auth/register" />
-    //       <Route path="/auth/login" />
-    //       <Route />
-    //     </Route>
-    //     <Route path="/home">
-    //       <Route path="/home/:boardName" />
-    //     </Route> */}
+
+        <Route path="/home">
+          <Route path="/home/:boardName" />
+        </Route>
+      </Route>
+      <Route path="auth/:id" element={<Auth />}>
+        <Route path="register" element={<RegisterForm />} />
+        <Route path="login" element={<>login</>} />
+
       </Route>
      </Routes>
   );
