@@ -1,4 +1,4 @@
-import { WelcomePage } from 'Pages/WelcomePage';
+import WelcomePage  from 'Pages/WelcomePage';
 import Auth from 'components/Auth/Auth';
 import { Layout } from 'components/Layout/Layout';
 import RegisterForm from 'components/Register/RegisterForm';
