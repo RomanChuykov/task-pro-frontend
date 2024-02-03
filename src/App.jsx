@@ -1,5 +1,5 @@
-import { HomePage } from 'Pages/HomePage';
-import { WelcomePage } from 'Pages/WelcomePage';
+import WelcomePage  from 'Pages/WelcomePage';
+
 import Auth from 'components/Auth/Auth';
 import { Layout } from 'components/Layout/Layout';
 import { PrivateRoute } from 'components/PrivateRoute';

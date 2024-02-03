@@ -1,30 +1,19 @@
-import * as Yup from 'yup';
-import { Formik } from 'formik';
-import { useDispatch } from 'react-redux';
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
-// import './RegisterFormStyles.js';
-import { register } from 'redux/auth/operations';
-import { selectIsLoading } from 'redux/auth/selectors';
+import React, { useState } from 'react';
+import sprite from '../../images/icons.svg';
 import {
   FormContainer,
   InputContainer,
+  LogInBtn,
   MessageError,
-  RegisterInBtn,
   StyledInput,
   StyledLabel,
   StyledSVG,
   StyledSVGButton,
-} from './RegisterForm.styled.jsx';
+} from './LogInForm.styled.jsx';
+import * as Yup from 'yup';
+import { Formik } from 'formik';
 
-import { useNavigate } from 'react-router-dom';
-import sprite from '../../images/icons.svg';
-
-const RegisterSchema = Yup.object().shape({
-  name: Yup.string()
-    .required('Name is required!')
-    .min(2, 'Name must be at least 2 characters')
-    .max(32, 'Name must be at most 32 characters'),
+const LogInSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email!').required('Email is required!'),
   password: Yup.string()
     .min(8, { length: 'Password is too short!' })
@@ -37,70 +26,58 @@ const RegisterSchema = Yup.object().shape({
     .max(64, 'Password must be at most 64 characters')
     .required('Password is required!'),
 });
+
 const initialValues = {
-  name: '',
   email: '',
   password: '',
-  showPassword: false,
 };
 
-const RegisterForm = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const loading = useSelector(selectIsLoading);
+export const LogInForm = () => {
+  const handleSubmit = e => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    form.reset();
+  };
+
   const [showPassword, setShowPassword] = useState(false);
+
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
-  const onSubmit = (values, { resetForm }) => {
-    const { name, email, password } = values;
-    dispatch(
-      register({
-        name,
-        email,
-        password,
-      })
-    );
+  //  const onSubmit = (values, { resetForm }) => {
+  //    const {email, password } = values;
+  //    dispatch();
+  //    logIn({
+  //      email,
+  //      password,
+  //    });
+  //    resetForm();
+  //  };
 
-    navigate('/welcome');
-    resetForm();
-  };
   return (
     <Formik
       initialValues={initialValues}
-      validationSchema={RegisterSchema}
-      onSubmit={onSubmit}
+      validationSchema={LogInSchema}
+      onSubmit={handleSubmit}
     >
       <FormContainer>
         <InputContainer>
           <StyledLabel>
             <StyledInput
               type="text"
-              id="name"
-              name="name"
-              placeholder="Enter your name"
-              autoComplete="off"
-            />
-            <MessageError name="name" component="div" />
-          </StyledLabel>
-
-          <StyledLabel>
-            <StyledInput
-              type="email"
               id="email"
               name="email"
-              placeholder="Enter your email"
               autoComplete="off"
+              placeholder="Enter your email"
             />
             <MessageError name="email" component="div" />
           </StyledLabel>
-
           <StyledLabel>
             <StyledInput
               type={showPassword ? 'text' : 'password'}
               id="password"
               name="password"
-              placeholder="Create a password"
+              placeholder="Confirm a password"
               autoComplete="off"
             />
             <MessageError name="password" component="div" />
@@ -111,12 +88,8 @@ const RegisterForm = () => {
             </StyledSVGButton>
           </StyledLabel>
         </InputContainer>
-        <RegisterInBtn type="submit">
-          {loading ? 'waiting' : 'Register Now'}
-        </RegisterInBtn>
+        <LogInBtn type="submit">Log In Now</LogInBtn>
       </FormContainer>
     </Formik>
   );
 };
-
-export default RegisterForm;

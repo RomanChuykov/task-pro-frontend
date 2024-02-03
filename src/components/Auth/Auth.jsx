@@ -6,7 +6,8 @@ import {
   FormContainer,
   LinkWrapper,
   WelcomeWrapper,
-} from './AuthStyled';
+} from './Auth.styled';
+import { LogInForm } from 'components/LogInForm/LogInForm';
 
 const Auth = () => {
   const { id } = useParams();
@@ -19,7 +20,7 @@ const Auth = () => {
           <AuthLinks to="/auth/login">Log In</AuthLinks>
         </LinkWrapper>
 
-        {id === 'login' && <>Login</>}
+        {id === 'login' && <LogInForm />}
         {id === 'register' && <RegisterForm />}
 
         <Suspense fallback={<>Login...</>}>
