@@ -19,7 +19,8 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 433px;
+    height: fit-content;
+    max-height: 433px;
     max-width: 350px;
     padding: 24px;
     background-color: rgba(21, 21, 21, 1);
@@ -50,7 +51,7 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 27px;
-    letter-spacing: -2%;
+    letter-spacing: 0.02em;
 }
 
 .modal-form {
@@ -69,7 +70,7 @@
     color: rgba(255, 255, 255, 1);
     font-family: inherit;
     line-height: 21px;
-    letter-spacing: -2%;
+    letter-spacing: 0.02em;
     outline: none;
 }
 
@@ -77,16 +78,17 @@
     color: rgba(255, 255, 255, 0.4);
     font-family: inherit;
     line-height: 21px;
-    letter-spacing: -2%;
+    letter-spacing: 0.02em;
 }
 
 .title-input:focus, .title-input:hover {
     border-color: rgba(190, 219, 176, 1);
 }
 
-.icons-header {
+.lists-header {
     color: white;
     line-height: 21px;
+    letter-spacing: 0.02em;
     letter-spacing: -2%;
     padding-bottom: 14px;
 }
@@ -96,13 +98,14 @@
     flex-wrap: wrap;
     flex-direction: row;
     column-gap: 8px;
+    margin-bottom: 24px;
 }
 
-input[type='radio'] {
+[id^=icon-] {
     display: none;
 }
   
-input[type='radio'] + label > svg {
+[id^=icon-] + label > svg {
     display: inline-block;
     vertical-align: middle;
     stroke: rgba(255, 255, 255, 0.5);
@@ -112,15 +115,74 @@ input[type='radio'] + label > svg {
     height: 18px;
 }
   
-input[type='radio']:checked + label > svg {
+[id^=icon-]:checked + label > svg {
     stroke: white;
     cursor:default;
 }
 
+.backs-list {
+    width: 270px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 4px;
+    row-gap: 4px;
+    margin-bottom: 40px;
+}
+
+[id^=bg-] {
+    display: none;
+}
+
+[id^=bg-] + label > span {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px transparent solid;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 28px;
+    height: 28px;
+}
+
+[id^=bg-]:checked + label > span {
+    border-color: white;
+    cursor:default;
+}
+
 .submit-button {
+    display: flex;
     max-width: 100%;
     height: 49px;
     border-radius: 8px;
+    font-weight: 500;
     background-color: rgba(190, 219, 176, 1);
     font-family: inherit;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 9px;
+}
+
+.submit-button:hover {
+    background-color: rgba(157, 200, 136, 1);
+}
+
+.submit-icon-back {
+    display: flex;
+    width: 28px;
+    height: 28px;
+    background-color: rgba(22, 22, 22, 1);
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-icon {
+    width: 14px;
+    height: 14px;
+    stroke: white;
 }
