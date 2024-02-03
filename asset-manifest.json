@@ -1,17 +1,18 @@
 {
   "files": {
     "main.css": "/NickTsalyn/task-pro-frontend/static/css/main.96b5a07d.css",
-    "main.js": "/NickTsalyn/task-pro-frontend/static/js/main.78685d71.js",
+    "main.js": "/NickTsalyn/task-pro-frontend/static/js/main.1ab5cc2d.js",
+    "static/media/welcome.png": "/NickTsalyn/task-pro-frontend/static/media/welcome.6370c83571764935d58b.png",
     "static/media/icons.svg": "/NickTsalyn/task-pro-frontend/static/media/icons.a48872a6fb44b6890935fa4a9dbede29.svg",
     "static/media/poppins-v20-latin-600.woff2": "/NickTsalyn/task-pro-frontend/static/media/poppins-v20-latin-600.91145014c0350c248ed2.woff2",
     "static/media/poppins-v20-latin-regular.woff2": "/NickTsalyn/task-pro-frontend/static/media/poppins-v20-latin-regular.405055dd680fa1dcdfa2.woff2",
     "static/media/poppins-v20-latin-500.woff2": "/NickTsalyn/task-pro-frontend/static/media/poppins-v20-latin-500.08491d3f7fe7ae88ef44.woff2",
     "index.html": "/NickTsalyn/task-pro-frontend/index.html",
     "main.96b5a07d.css.map": "/NickTsalyn/task-pro-frontend/static/css/main.96b5a07d.css.map",
-    "main.78685d71.js.map": "/NickTsalyn/task-pro-frontend/static/js/main.78685d71.js.map"
+    "main.1ab5cc2d.js.map": "/NickTsalyn/task-pro-frontend/static/js/main.1ab5cc2d.js.map"
   },
   "entrypoints": [
     "static/css/main.96b5a07d.css",
-    "static/js/main.78685d71.js"
+    "static/js/main.1ab5cc2d.js"
   ]
 }
