@@ -9,7 +9,7 @@ import {
   StyledLabel,
   StyledSVG,
   StyledSVGButton,
-} from './LoginForm.styled;
+} from './LoginForm.styled';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 
