@@ -17,6 +17,7 @@ const theme = {
     white: '#fff',
     darkTextColor: '#161616',
     greyTextColor: 'rgba(255, 255, 255, 0.3)',
+    greyIconColor: 'rgba(255, 255, 255, 0.5)',
     lightGreen: '#bedbb0',
     darkBgn: '#151515',
     darkInputBgn: '#1f1f1f',
