@@ -1,0 +1,126 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 10px 40px 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    overflow-y: auto;
+    transition: opacity 0.3s;
+}
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 433px;
+    max-width: 350px;
+    padding: 24px;
+    background-color: rgba(21, 21, 21, 1);
+    border-radius: 8px;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.25));
+    transform: translateY(50px);
+    transition: transform 0.3s;
+}
+
+.modal-close-button {
+    position: absolute;
+    background-color: transparent;
+    top: 14px;
+    right: 14px;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
+.modal-close-button > svg {
+    width: 18px;
+    height: 18px;
+    stroke: white;
+}
+
+.modal-header {
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: -2%;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-input {
+    margin: 24px 0;
+    height: 49px;
+    max-width: 302px;
+    background-color: transparent;
+    border: 1px rgba(190, 219, 176, 0.4) solid;
+    border-radius: 8px;
+    padding: 0 18px;
+    color: rgba(255, 255, 255, 1);
+    font-family: inherit;
+    line-height: 21px;
+    letter-spacing: -2%;
+    outline: none;
+}
+
+.title-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    font-family: inherit;
+    line-height: 21px;
+    letter-spacing: -2%;
+}
+
+.title-input:focus, .title-input:hover {
+    border-color: rgba(190, 219, 176, 1);
+}
+
+.icons-header {
+    color: white;
+    line-height: 21px;
+    letter-spacing: -2%;
+    padding-bottom: 14px;
+}
+
+.icons-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    column-gap: 8px;
+}
+
+input[type='radio'] {
+    display: none;
+}
+  
+input[type='radio'] + label > svg {
+    display: inline-block;
+    vertical-align: middle;
+    stroke: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    fill: transparent;
+    width: 18px;
+    height: 18px;
+}
+  
+input[type='radio']:checked + label > svg {
+    stroke: white;
+    cursor:default;
+}
+
+.submit-button {
+    max-width: 100%;
+    height: 49px;
+    border-radius: 8px;
+    background-color: rgba(190, 219, 176, 1);
+    font-family: inherit;
+}

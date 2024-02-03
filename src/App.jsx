@@ -1,9 +1,11 @@
 import { WelcomePage } from 'Pages/WelcomePage';
 import { Layout } from 'components/Layout/Layout';
 import { Route, Routes } from 'react-router-dom';
+import { AddBoard } from 'components/boardModals/addBoard';
 
 export const App = () => {
   return (
+    <div>
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<WelcomePage />} />
@@ -17,5 +19,7 @@ export const App = () => {
         </Route> */}
       </Route>
     </Routes>
+    <AddBoard />
+    </div>
   );
 };
