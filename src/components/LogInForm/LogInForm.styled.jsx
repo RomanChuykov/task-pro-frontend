@@ -41,7 +41,7 @@ export const StyledInput = styled(Field)`
   opacity: 0.4;
   outline: none;
   box-shadow: 0px 4px 16px 0px ${p => p.theme.colors.shadowColor};
-
+  box-sizing: border-box;
   &::placeholder {
     font-size: 14px;
     color: ${p => p.theme.colors.greyTextColor};

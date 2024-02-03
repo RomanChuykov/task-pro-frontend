@@ -2,19 +2,23 @@ import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
-import './RegisterFormStyles.js';
+// import './RegisterFormStyles.js';
 import { register } from 'redux/auth/operations';
 import { selectIsLoading } from 'redux/auth/selectors';
 import {
-  AuthForm,
-  AuthFormField,
-  AuthFormWrapper,
-  ErrorSection,
-  FormIcon,
-  WelcomeButton,
-} from './RegisterFormStyles.js';
+  FormContainer,
+  InputContainer,
+  MessageError,
+  RegisterInBtn,
+  StyledInput,
+  StyledLabel,
+  StyledSVG,
+  StyledSVGButton,
+} from './RegisterForm.styled.jsx';
+
+import { useNavigate } from 'react-router-dom';
+import sprite from '../../images/icons.svg';
 
 const RegisterSchema = Yup.object().shape({
   name: Yup.string()
@@ -41,6 +45,7 @@ const initialValues = {
 };
 
 const RegisterForm = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const loading = useSelector(selectIsLoading);
   const [showPassword, setShowPassword] = useState(false);
@@ -49,12 +54,15 @@ const RegisterForm = () => {
   };
   const onSubmit = (values, { resetForm }) => {
     const { name, email, password } = values;
-    dispatch();
-    register({
-      name,
-      email,
-      password,
-    });
+    dispatch(
+      register({
+        name,
+        email,
+        password,
+      })
+    );
+
+    navigate('/welcome');
     resetForm();
   };
   return (
@@ -63,47 +71,50 @@ const RegisterForm = () => {
       validationSchema={RegisterSchema}
       onSubmit={onSubmit}
     >
-      <AuthForm>
-        <AuthFormWrapper>
-          <ErrorSection name="name" component="div" />
-          <AuthFormField
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Enter your name"
-            autoComplete="off"
-          />
-        </AuthFormWrapper>
+      <FormContainer>
+        <InputContainer>
+          <StyledLabel>
+            <StyledInput
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              autoComplete="off"
+            />
+            <MessageError name="name" component="div" />
+          </StyledLabel>
 
-        <AuthFormWrapper>
-          <ErrorSection name="email" component="div" />
-          <AuthFormField
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter your email"
-            autoComplete="off"
-          />
-        </AuthFormWrapper>
+          <StyledLabel>
+            <StyledInput
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              autoComplete="off"
+            />
+            <MessageError name="email" component="div" />
+          </StyledLabel>
 
-        <AuthFormWrapper>
-          <ErrorSection name="password" component="div" />
-          <AuthFormField
-            type={showPassword ? 'text' : 'password'}
-            id="password"
-            name="password"
-            placeholder="Create a password"
-            autoComplete="off"
-          />
-          <FormIcon onClick={handleTogglePassword}>
-            {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
-          </FormIcon>
-        </AuthFormWrapper>
-
-        <WelcomeButton type="submit">
-          {loading ? 'Register Now' : 'Register Now'}
-        </WelcomeButton>
-      </AuthForm>
+          <StyledLabel>
+            <StyledInput
+              type={showPassword ? 'text' : 'password'}
+              id="password"
+              name="password"
+              placeholder="Create a password"
+              autoComplete="off"
+            />
+            <MessageError name="password" component="div" />
+            <StyledSVGButton type="button " onClick={handleTogglePassword}>
+              <StyledSVG>
+                <use xlinkHref={`${sprite}#icon-eye`}></use>
+              </StyledSVG>
+            </StyledSVGButton>
+          </StyledLabel>
+        </InputContainer>
+        <RegisterInBtn type="submit">
+          {loading ? 'waiting' : 'Register Now'}
+        </RegisterInBtn>
+      </FormContainer>
     </Formik>
   );
 };

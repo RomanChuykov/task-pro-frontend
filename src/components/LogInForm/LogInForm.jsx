@@ -9,7 +9,7 @@ import {
   StyledLabel,
   StyledSVG,
   StyledSVGButton,
-} from './LoginForm.styled';
+} from './LogInForm.styled.jsx';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 
@@ -32,7 +32,7 @@ const initialValues = {
   password: '',
 };
 
-export const LoginForm = () => {
+export const LogInForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
