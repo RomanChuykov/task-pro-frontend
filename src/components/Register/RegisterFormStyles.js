@@ -86,7 +86,6 @@ export const WelcomeButton = styled.button`
   text-align: center;
   letter-spacing: -0.02em;
   color: #161616;
-
   transition: all 150ms linear;
 
   &:hover {
