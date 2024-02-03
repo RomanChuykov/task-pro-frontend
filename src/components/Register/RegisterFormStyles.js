@@ -1,27 +1,64 @@
 import styled from 'styled-components';
-import { Field } from 'formik';
+import { Form, Field, ErrorMessage } from 'formik';
 
-export const FormWrapper = styled.div`
+export const AuthFormWrapper = styled.div`
   position: relative;
-  width: 100%;
+
+  .auth-form__error-message {
+    margin: 0;
+    color: #bab0b0;
+    font-size: 12px;
+  }
 `;
 
-export const FormField = styled(Field)`
+export const FormIcon = styled.span`
+  position: absolute;
+  bottom: 12px;
+  right: 18px;
+  color: transparent;
+  opacity: 0.4;
+  cursor: pointer;
+
+  @media (min-width: 375px) {
+    color: #fff;
+  }
+`;
+
+export const AuthForm = styled(Form)`
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+`;
+
+export const ErrorSection = styled(ErrorMessage)`
+  margin-top: 3px;
+  padding-left: 14px;
+  color: #c04d4d;
+  font-size: 12px;
+`;
+
+export const AuthFormField = styled(Field)`
   width: calc(100%);
   height: 49px;
-  padding: 14px 18px;
+  padding-left: 14px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  box-sizing: border-box;
   font-size: 14px;
-  letter-spacing: -0.28px;
-  color: #ffffff;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+
+  color: rgb(255, 255, 255, 0.3);
   border-radius: 8px;
-  border: 1px solid #bedbb0;
-  background: #1f1f1f;
+  border: 1px solid rgb(190, 219, 176);
+  background: rgb(31, 31, 31);
   box-shadow: 0px 4px 16px 0px rgba(22, 22, 22, 0.08);
   outline: none;
   transition: all 150ms ease;
+
   opacity: 0.4;
 
-  &:placeholder {
+  &::placeholder {
     color: #fff;
     font-size: 14px;
     letter-spacing: -0.28px;
@@ -32,158 +69,29 @@ export const FormField = styled(Field)`
   }
 `;
 
-export const FormIcon = styled.span`
-  position: absolute;
-  bottom: 15px;
-  right: 18px;
-  color: #fff;
-  opacity: 0.4;
-  cursor: pointer;
-`;
-
 export const WelcomeButton = styled.button`
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 49px;
   padding: 14px;
   border: none;
+  margin-top: 10px;
   background: #bedbb0;
   border-radius: 8px;
-  line-height: 21px;
-  letter-spacing: -0.02em;
-  color: #161616;
-`;
 
-export const FormError = styled.div`
-  margin-top: 3px;
-  padding-left: 14px;
-  color: #c04d4d;
-  font-size: 12px;
-`;
-
-export const RegisterFormWrapper = styled.div`
-  margin: 10px 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 14px;
-`;
-
-/* .welcome-button {
-  width: 100%;
-  height: 49px;
-  padding: 14px;
-  border: none;
-  background: #bedbb0;
-  border-radius: 8px;
-  line-height: 21px;
-  letter-spacing: -0.02em;
-  color: #161616;
-}
-
-.form-icon {
-  position: absolute;
-  bottom: 15px;
-  right: 18px;
-  color: #fff;
-  opacity: 0.4;
-  cursor: pointer;
-}
-.form-wrapper {
-  position: relative;
-  width: 100%;
-}
-
-.form-field {
-  width: calc(100%);
-  height: 49px;
-  padding: 14px 18px;
-  font-size: 14px;
-  letter-spacing: -0.28px;
-  color: #ffffff;
-  border-radius: 8px;
-  border: 1px solid #bedbb0;
-  background: #1f1f1f;
-  box-shadow: 0px 4px 16px 0px rgba(22, 22, 22, 0.08);
-  outline: none;
-  transition: all 150ms ease;
-
-  opacity: 0.4;
-}
-
-.form-field::placeholder {
-  color: #fff;
-  font-size: 14px;
-  letter-spacing: -0.28px;
-}
-
-.form-field:focus {
-  opacity: 1;
-}
-.form-error {
-  margin-top: 3px;
-  padding-left: 14px;
-  color: #c04d4d;
-  font-size: 12px;
-}
-
-.welcome-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(
-    180deg,
-    rgba(196, 196, 196, 0) 25%,
-    #bedbb0 92.19%
-  );
-}
-.link-wrapper {
-  display: flex;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  gap: 14px;
-}
-
-.register-form {
-  margin: 10px 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.form-container {
-  width: calc(100%-84px);
-  background-color: #151515;
-  height: 395px;
-  border-radius: 8px;
-}
-@media (min-width: 375px) {
-  .form-container {
-    width: 335px;
-  }
-}
-@media (min-width: 768px) {
-  .form-container {
-    width: 424px;
-  }
-}
-.auth-links {
-  margin-left: 29px;
-  color: rgba(255, 255, 255, 0.3);
-  text-decoration: none;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 27px;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
   letter-spacing: -0.02em;
-  text-decoration: none;
-  background: none;
-  border: none;
-  transition: color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-.auth-link:hover,
-.active {
-  color: #ffffff;
-} */
+  color: #161616;
+
+  transition: all 150ms linear;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  cursor: pointer;
+`;

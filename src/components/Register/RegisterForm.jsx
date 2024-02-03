@@ -1,5 +1,5 @@
 import * as Yup from 'yup';
-import { Formik, ErrorMessage, Form } from 'formik';
+import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
@@ -8,11 +8,11 @@ import './RegisterFormStyles.js';
 import { register } from 'redux/auth/operations';
 import { selectIsLoading } from 'redux/auth/selectors';
 import {
-  FormError,
-  FormField,
+  AuthForm,
+  AuthFormField,
+  AuthFormWrapper,
+  ErrorSection,
   FormIcon,
-  FormWrapper,
-  RegisterFormWrapper,
   WelcomeButton,
 } from './RegisterFormStyles.js';
 
@@ -63,47 +63,47 @@ const RegisterForm = () => {
       validationSchema={RegisterSchema}
       onSubmit={onSubmit}
     >
-      <RegisterFormWrapper>
-        <Form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-          <FormWrapper>
-            <ErrorMessage name="name" component={FormError} />
-            <FormField
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Enter your name"
-              autoComplete="off"
-            />
-          </FormWrapper>
-          <FormWrapper>
-            <ErrorMessage name="email" component={FormError} />
-            <FormField
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-              autoComplete="off"
-            />
-          </FormWrapper>
-          <FormWrapper>
-            <ErrorMessage name="password" component={FormError} />
-            <FormField
-              type={showPassword ? 'text' : 'password'}
-              id="password"
-              name="password"
-              placeholder="Create a password"
-              autoComplete="off"
-            />
-            <FormIcon onClick={handleTogglePassword}>
-              {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
-            </FormIcon>
-          </FormWrapper>
+      <AuthForm>
+        <AuthFormWrapper>
+          <ErrorSection name="name" component="div" />
+          <AuthFormField
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            autoComplete="off"
+          />
+        </AuthFormWrapper>
 
-          <WelcomeButton type="submit">
-            {loading ? 'Register Now' : 'Register now'}
-          </WelcomeButton>
-        </Form>
-      </RegisterFormWrapper>
+        <AuthFormWrapper>
+          <ErrorSection name="email" component="div" />
+          <AuthFormField
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            autoComplete="off"
+          />
+        </AuthFormWrapper>
+
+        <AuthFormWrapper>
+          <ErrorSection name="password" component="div" />
+          <AuthFormField
+            type={showPassword ? 'text' : 'password'}
+            id="password"
+            name="password"
+            placeholder="Create a password"
+            autoComplete="off"
+          />
+          <FormIcon onClick={handleTogglePassword}>
+            {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+          </FormIcon>
+        </AuthFormWrapper>
+
+        <WelcomeButton type="submit">
+          {loading ? 'Register Now' : 'Register Now'}
+        </WelcomeButton>
+      </AuthForm>
     </Formik>
   );
 };

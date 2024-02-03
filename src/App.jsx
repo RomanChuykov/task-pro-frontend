@@ -13,7 +13,7 @@ export const App = () => {
           <Route path="/home/:boardName" />
         </Route>
       </Route>
-      <Route path="auth" element={<Auth />}>
+      <Route path="auth/:id" element={<Auth />}>
         <Route path="register" element={<RegisterForm />} />
         <Route path="login" element={<>login</>} />
       </Route>
