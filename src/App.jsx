@@ -6,11 +6,9 @@ import {AddColumnButton} from './components/Button/AddColumnButton'
 export const App = () => {
   return (
     
-<AddColumnButton />
-
-    // <Routes>
-    //   <Route path="/" element={<Layout />}>
-    //     <Route index element={<WelcomePage />} />
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<WelcomePage />} />
     //     {/* <Route path="/auth/:id">
     //       <Route path="/auth/register" />
     //       <Route path="/auth/login" />
@@ -19,7 +17,7 @@ export const App = () => {
     //     <Route path="/home">
     //       <Route path="/home/:boardName" />
     //     </Route> */}
-    //   </Route>
-    // </Routes>
+      </Route>
+     </Routes>
   );
 };
