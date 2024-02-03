@@ -1,13 +1,5 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-  height: 100vh;
-  background: linear-gradient(
-    180deg,
-    rgba(196, 196, 196, 0) 25%,
-    #bedbb0 92.19%
-  );
-`;
 export const Container = styled.div`
   position: absolute;
   top: 50%;
@@ -26,18 +18,18 @@ export const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 24px;
+  margin: 0 auto ${p=> p.theme.spacing(6)};
 `;
 
 export const StyledImg = styled.img`
   width: 124px;
   height: 124px;
-  margin: 0 auto 14px;
+  margin: 0 auto ${p=> p.theme.spacing(3.5)};
 
   @media only screen and (min-width: 768px) {
     width: 162px;
     height: 162px;
-    margin: 0 auto 24px;
+    margin: 0 auto ${p=> p.theme.spacing(6)};
   }
 `;
 
@@ -46,7 +38,7 @@ export const StyledSVG = styled.svg`
   height: 40px;
   fill: ${props => props.theme.colors.darkTextColor};
   stroke: ${props => props.theme.colors.white};
-  margin-right: 16px;
+  margin-right: ${p=> p.theme.spacing(4)};
   @media only screen and (min-width: 768px) {
     width: 48px;
     height: 48px;
@@ -66,11 +58,11 @@ export const StyledText = styled.p`
   line-height: 1.28571;
   letter-spacing: -0.02em;
   text-align: center;
-  margin: 0 auto 48px;
+  margin: 0 auto ${p=> p.theme.spacing(12)};
 `;
 export const RegistrationBtn = styled.button`
   width: 335px;
-  padding: 14px 0px;
+  padding: ${p=> p.theme.spacing(3.5)} 0px;
   justify-content: center;
   align-items: center;
 
@@ -81,13 +73,12 @@ export const RegistrationBtn = styled.button`
 
   color: ${props => props.theme.colors.white};
 
-  font-family: inherit;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: -0.02em;
   text-align: center;
 
-  margin: 0 auto 14px;
+  margin: 0 auto ${p=> p.theme.spacing(3.5)};
   @media only screen and (min-width: 768px) {
     width: 344px;
   }
