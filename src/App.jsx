@@ -1,6 +1,7 @@
+import { Route, Routes } from 'react-router-dom';
+
 import { WelcomePage } from 'Pages/WelcomePage';
 import { HomeLayout, WelcomeLayout } from 'components/Layouts/Layouts';
-import { Route, Routes } from 'react-router-dom';
 
 export const App = () => {
   return (
