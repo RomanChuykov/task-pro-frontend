@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const EditSVG = styled.svg`
-   stroke: ${p => p.theme.colors.greyIconColor};
-  /* fill: ${p => p.theme.colors.white}; */
+  stroke: ${p => p.theme.colors.greyIconColor};
+  fill: ${p => p.theme.colors.white};
   opacity: 0.4;
   cursor: pointer;
 

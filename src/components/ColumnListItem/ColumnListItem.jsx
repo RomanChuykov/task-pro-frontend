@@ -2,8 +2,9 @@
 
 import sprite from '../../images/icons.svg'
 import { CardList } from "components/CardList/CardList";
-import { EditSVG } from "./Column.styled";
-export const Column = () => {
+import { EditSVG } from "./ColumnListItem.styled";
+
+export const ColumnListItem = () => {
 
     // const dispatch = useDispatch();    
     // const items = useSelector(selectColumns);
@@ -28,7 +29,7 @@ export const Column = () => {
           {/* {columns.map(column =>
             <li key={column.id}> */}
                 <CardList/>
-                <>ButtonAddAnotherCard</>                 
+                <button>ButtonAddAnotherCard</button>                 
             {/* </li>
           ) }   */}
         </>      
