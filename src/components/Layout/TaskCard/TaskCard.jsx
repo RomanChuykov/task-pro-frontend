@@ -31,26 +31,17 @@ return (
 
             </TextContainer>
 
-            <Line>
-            {/* <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/fe69065c8f402f35d62dbe4e885da7f5293d61c960e51156ac6636f8c50e7794?"
-              className="mt-5 w-full stroke-[1px] stroke-white stroke-opacity-10"
-            /> */}
-            </Line>
+            <Line></Line>
            
             <MenuCard >
               <CardPriorityDeadline >
                 <ToDoContainer >
-                  {/* <div className=""> */}
                     <SubTitle>Priority</SubTitle>
                     <PriorityContainer>
                     <CirclePriority  />
                     <TextPriority>Low</TextPriority>
                     </PriorityContainer>
-                   
-                  {/* </div> */}
-                 
+                                   
                 </ToDoContainer>
                 <DeadlineContainer >
                     <SubTitle>
