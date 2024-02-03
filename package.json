@@ -2,7 +2,7 @@
   "name": "task-pro",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/NickTsalyn/task-pro-frontend/",
+  "homepage": "https://NickTsalyn.github.io/task-pro-frontend/",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@emotion/styled": "^11.11.0",
