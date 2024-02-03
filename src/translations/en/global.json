@@ -6,7 +6,7 @@
       "login": "Log In"
     },
     "registration": {
-      "name": "Enter your name",
+      "name": "Geben Sie Ihren Namen ein",
       "email": "Enter your email",
       "password": "Create a password",
       "button": "Register Now"
