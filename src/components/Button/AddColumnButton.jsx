@@ -5,7 +5,10 @@ import { Button } from 'components/Button/Button';
 import sprite from '../../images/icons.svg';
 // import styled from 'styled-components';
 import './AddColumnButton.css';
-import {StyledSvgWhitePlus, StyledSvgDarkPlus} from '../Button/AddColumnButton.styled'
+import {
+  StyledSvgWhitePlus,
+  StyledSvgDarkPlus,
+} from '../Button/AddColumnButton.styled';
 
 export const AddColumnButton = () => {
   const [modalAddColumnIsOpen, setModalAddColumnIsOpen] = useState(false);
@@ -23,7 +26,7 @@ export const AddColumnButton = () => {
           className="modal-show-button"
           onClick={() => setModalAddColumnIsOpen(true)}
         >
-          <span className="iconBlackWrap">
+          <span className="iconVioletWrap">
             <StyledSvgWhitePlus>
               <use xlinkHref={`${sprite}#icon-plus`}></use>
             </StyledSvgWhitePlus>
@@ -35,7 +38,7 @@ export const AddColumnButton = () => {
           className="modal-show-button"
           onClick={() => setModalEditColumnIsOpen(true)}
         >
-          <span className="iconBlackWrap">
+          <span className="iconVioletWrap">
             <StyledSvgWhitePlus>
               <use xlinkHref={`${sprite}#icon-plus`}></use>
             </StyledSvgWhitePlus>
@@ -58,11 +61,7 @@ export const AddColumnButton = () => {
                 className="addColumn_input"
                 autoFocus
               />
-              <Button
-                type="submit"
-                className="addColumn_btn"
-                
-              >
+              <Button type="submit" className="addColumn_btn">
                 <span className="iconWhiteWrap">
                   <StyledSvgDarkPlus>
                     <use xlinkHref={`${sprite}#icon-plus`}></use>

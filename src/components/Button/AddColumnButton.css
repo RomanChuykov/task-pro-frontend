@@ -98,13 +98,13 @@
   border-radius: 8px;
 }
 
-.iconBlackWrap {
+.iconVioletWrap {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 28px;
   height: 28px;
-  background-color: #161616;
+  background-color: #7b7ede;
   border-radius: 8px;
 }
 .iconBlack {
