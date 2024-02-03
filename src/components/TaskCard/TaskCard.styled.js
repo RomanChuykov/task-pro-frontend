@@ -29,8 +29,7 @@ export const MainContainer = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-family: 'Poppins';
-  font-style: normal;
+    
   margin: 0;
   margin-bottom: ${p => p.theme.spacing(2)};
   font-weight: 600;

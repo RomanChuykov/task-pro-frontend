@@ -7,7 +7,7 @@ export const Column = () => {
 
     // const dispatch = useDispatch();    
     // const items = useSelector(selectColumns);
-    const columns = [];
+    // const columns = [];
     const columnTitle = 'Title column';
     
     return(
@@ -25,12 +25,12 @@ export const Column = () => {
               </EditSVG>
             </button>
           </div>
-          {columns.map(column =>
-            <li key={column.id}>
+          {/* {columns.map(column =>
+            <li key={column.id}> */}
                 <CardList/>
                 <>ButtonAddAnotherCard</>                 
-            </li>
-          ) }  
+            {/* </li>
+          ) }   */}
         </>      
       );
 };

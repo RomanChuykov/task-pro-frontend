@@ -31,6 +31,12 @@ const theme = {
     lightViolet: '#b8bcfd', //button +
     violet: '#979cea', //hover button +
   },
+  priorityColors: { // task's priority colors
+    low: '#8FA1D0', //low priority
+    medium:'E09CB5', //medium priority
+    high:'BEDBB0', // high priority
+    without: '161616', //without priority
+    },
   radius: {
     s: '6px', //button +
     m: '8px',

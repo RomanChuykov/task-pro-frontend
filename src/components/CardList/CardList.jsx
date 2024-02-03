@@ -4,7 +4,7 @@ export const CardList = () => {
     return(
         <ul>
             <CardListItem/>
-            <>ButtonAddAnotherCard</>
+            <button>ButtonAddAnotherCard</button>
         </ul>
     )
 };
