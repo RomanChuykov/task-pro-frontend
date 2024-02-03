@@ -43,7 +43,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <BrowserRouter basename="NickTsalyn/task-pro-frontend">
+        <BrowserRouter basename="task-pro-frontend">
           <ThemeProvider theme={theme}>
             <App></App>
           </ThemeProvider>
