@@ -74,6 +74,7 @@ a {
 
 button {
   cursor: pointer;
+  font-family: inherit;
 }
 
 .ReactModal__Overlay {
