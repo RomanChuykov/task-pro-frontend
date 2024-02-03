@@ -13,10 +13,15 @@ export const AddBoard = () => {
         setOpenModal(true)
     }
 
+    function SubmitForm(info) {
+        console.log(info)
+        setOpenModal(false)
+    }
+
     return (
         <>
             <AddBoardButton onClick={OpenModal} />
-            <BoardModalBase isModalOpen={isModalOpen} title={''} onCloseModal={CloseModal} action={'add'}/>
+            <BoardModalBase isModalOpen={isModalOpen} info={''} onCloseModal={CloseModal} action={'add'} SubmitForm={SubmitForm}/>
         </>
     )
 }

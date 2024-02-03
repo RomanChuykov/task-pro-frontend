@@ -101,11 +101,11 @@
     margin-bottom: 24px;
 }
 
-[id^=icon-] {
+.icon-radio {
     display: none;
 }
   
-[id^=icon-] + label > svg {
+.icon-radio + svg {
     display: inline-block;
     vertical-align: middle;
     stroke: rgba(255, 255, 255, 0.5);
@@ -115,7 +115,7 @@
     height: 18px;
 }
   
-[id^=icon-]:checked + label > svg {
+.icon-radio:checked + svg {
     stroke: white;
     cursor:default;
 }
@@ -130,11 +130,11 @@
     margin-bottom: 40px;
 }
 
-[id^=bg-] {
+.background-radio {
     display: none;
 }
 
-[id^=bg-] + label > span {
+.background-radio + span {
     display: inline-block;
     vertical-align: middle;
     background-color: rgba(255, 255, 255, 0.5);
@@ -145,7 +145,7 @@
     height: 28px;
 }
 
-[id^=bg-]:checked + label > span {
+.background-radio:checked + span {
     border-color: white;
     cursor:default;
 }

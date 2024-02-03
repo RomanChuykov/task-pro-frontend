@@ -3,16 +3,27 @@ import Modal from 'react-modal'
 import sprite from 'images/icons.svg'
 import './BoardModalBase.styled.css'
 
-export const BoardModalBase = ({ isModalOpen, title, onCloseModal, action }) => {
-    const [currentTitle, setCurrentTitle] = useState(title)
+export const BoardModalBase = ({ isModalOpen, info, onCloseModal, action, SubmitForm }) => {
+    const [title, setTitle] = useState(info.title)
+    const [icon, setIcon] = useState(info.icon)
+    const [background, setBackground] = useState(info.background)
 
-    function handleChange(event) {
-        setCurrentTitle(event.target.value)
-    }
+    const Icons = [{value: 'icon-Project'}, {value: 'icon-star-04'}, {value: 'icon-loading-03'}, {value: 'icon-puzzle-piece-02'},
+                   {value: 'icon-container'}, {value: 'icon-lightning-02'}, {value: 'icon-colors'}, {value: 'icon-hexagon-01'}]
+    
+    const Backgrounds = [{value: '0'}, {value: '1'}, {value: '2'}, {value: '3'},
+                        {value: '4'}, {value: '5'}, {value: '6'}, {value: '7'},
+                        {value: '8'}, {value: '9'}, {value: '10'}, {value: '11'},
+                        {value: '12'}, {value: '13'}, {value: '14'}, {value: '15'}]
 
     function close() {
         onCloseModal()
-        setCurrentTitle('')
+        setTitle('')
+    }
+
+    function sub(event) {
+        event.preventDefault()
+        SubmitForm({title, icon, background})
     }
 
     return (
@@ -29,140 +40,47 @@ export const BoardModalBase = ({ isModalOpen, title, onCloseModal, action }) => 
 
             <p className="modal-header">{action==='add' ? 'New' : 'Edit'} board</p>
 
-            <form className="modal-form">
+            <form className="modal-form" onSubmit={event => sub(event)}>
                 <input
                     id="title"
+                    name='title'
                     placeholder='Title'
-                    value={currentTitle}
-                    onChange={(event) => handleChange(event)}
+                    value={title}
+                    onChange={(event) => setTitle(event.target.value)}
                     className='title-input'
                     required
                 />
 
                 <p className="lists-header">Icons</p>
                 <label className="icons-list">
-                    <input type="radio" id="icon-1"></input>
-                    <label htmlFor="icon-1">
-                        <svg aria-hidden="true"><use xlinkHref={`${sprite}#icon-Project`}></use></svg>
-                    </label>
-
-                    <input type="radio" id="icon-2"></input>
-                    <label htmlFor="icon-2">
-                        <svg aria-hidden="true"><use xlinkHref={`${sprite}#icon-star-04`}></use></svg>
-                    </label>
-
-                    <input type="radio" id="icon-3"></input>
-                    <label htmlFor="icon-3">
-                        <svg aria-hidden="true"><use xlinkHref={`${sprite}#icon-loading-03`}></use></svg>
-                    </label>
-
-                    <input type="radio" id="icon-4"></input>
-                    <label htmlFor="icon-4">
-                        <svg aria-hidden="true"><use xlinkHref={`${sprite}#icon-puzzle-piece-02`}></use></svg>
-                    </label>
-
-                    <input type="radio" id="icon-5"></input>
-                    <label htmlFor="icon-5">
-                        <svg aria-hidden="true"><use xlinkHref={`${sprite}#icon-container`}></use></svg>
-                    </label>
-
-                    <input type="radio" id="icon-6"></input>
-                    <label htmlFor="icon-6">
-                        <svg aria-hidden="true"><use xlinkHref={`${sprite}#icon-lightning-02`}></use></svg>
-                    </label>
-
-                    <input type="radio" id="icon-7"></input>
-                    <label htmlFor="icon-7">
-                        <svg aria-hidden="true"><use xlinkHref={`${sprite}#icon-colors`}></use></svg>
-                    </label>
-
-                    <input type="radio" id="icon-8"></input>
-                    <label htmlFor="icon-8">
-                        <svg aria-hidden="true"><use xlinkHref={`${sprite}#icon-hexagon-01`}></use></svg>
-                    </label>
+                    {Icons.map((Icon, index) => (
+                        <label key={index}>
+                            <input 
+                                type="radio" 
+                                className='icon-radio' 
+                                name='icon'
+                                value={Icon.value}
+                                onChange={() => setIcon(Icon.value)}>
+                            </input>
+                            <svg aria-hidden="true"><use xlinkHref={`${sprite}#${Icon.value}`}></use></svg>
+                        </label>
+                    ))}
                 </label>
 
                 <p className="lists-header">Background</p>
                 <label className='backs-list'>
-                    <input type='radio' id='bg-1'></input>
-                    <label htmlFor="bg-1">
-                        <span></span>
-                    </label>
-
-                    <input type='radio' id='bg-2'></input>
-                    <label htmlFor="bg-2">
-                        <span></span>
-                    </label>
-
-                    <input type='radio' id='bg-3'></input>
-                    <label htmlFor="bg-3">
-                        <span></span>
-                    </label>
-
-                    <input type='radio' id='bg-4'></input>
-                    <label htmlFor="bg-4">
-                        <span></span>
-                    </label>
-
-                    <input type='radio' id='bg-5'></input>
-                    <label htmlFor="bg-5">
-                        <span></span>
-                    </label>
-
-                    <input type='radio' id='bg-6'></input>
-                    <label htmlFor="bg-6">
-                        <span></span>
-                    </label>
-
-                    <input type='radio' id='bg-7'></input>
-                    <label htmlFor="bg-7">
-                        <span className='back'></span>
-                    </label>
-
-                    <input type='radio' id='bg-8'></input>
-                    <label htmlFor="bg-8">
-                        <span></span>
-                    </label>
-
-                    <input type='radio' id='bg-9'></input>
-                    <label htmlFor="bg-9">
-                        <span></span>
-                    </label>
-
-                    <input type='radio' id='bg-10'></input>
-                    <label htmlFor="bg-10">
-                        <span></span>
-                    </label>
-
-                    <input type='radio' id='bg-11'></input>
-                    <label htmlFor="bg-11">
-                        <span></span>
-                    </label>
-
-                    <input type='radio' id='bg-12'></input>
-                    <label htmlFor="bg-12">
-                        <span></span>
-                    </label>
-
-                    <input type='radio' id='bg-13'></input>
-                    <label htmlFor="bg-13">
-                        <span></span>
-                    </label>
-
-                    <input type='radio' id='bg-14'></input>
-                    <label htmlFor="bg-14">
-                        <span></span>
-                    </label>
-
-                    <input type='radio' id='bg-15'></input>
-                    <label htmlFor="bg-15">
-                        <span></span>
-                    </label>
-
-                    <input type='radio' id='bg-16'></input>
-                    <label htmlFor="bg-16">
-                        <span></span>
-                    </label>
+                    {Backgrounds.map((Background, index) => (
+                        <label key={index}>
+                            <input 
+                                type="radio" 
+                                className='background-radio' 
+                                name='background'
+                                value={Background.value}
+                                onChange={() => setBackground(Background.value)}>
+                            </input>
+                            <span></span>
+                        </label>
+                    ))}
                 </label>
 
                 <button className='submit-button' type="submit">
