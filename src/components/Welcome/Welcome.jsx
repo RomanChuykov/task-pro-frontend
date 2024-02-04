@@ -9,14 +9,14 @@ import {
   StyledImg,
   StyledSVG,
   StyledText,
-  Wrapper,
+  
 } from './Welcome.styled';
 import sprite from '../../images/icons.svg';
 import { NavLink } from 'react-router-dom';
 
 export const Welcome = () => {
   return (
-    <Wrapper>
+    
       <Container>
         <StyledImg src={welcomImg} alt="welcome-img" />
         <LogoWrapper>
@@ -36,6 +36,6 @@ export const Welcome = () => {
           <LoginBtn>Log In</LoginBtn>
         </NavLink>
       </Container>
-    </Wrapper>
+    
   );
 };

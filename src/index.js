@@ -17,6 +17,7 @@ const theme = {
     white: '#fff',
     darkTextColor: '#161616',
     greyTextColor: 'rgba(255, 255, 255, 0.3)',
+    greyIconColor: 'rgba(255, 255, 255, 0.5)',
     lightGreen: '#bedbb0',
     darkBgn: '#151515',
     darkInputBgn: '#1f1f1f',
@@ -42,7 +43,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <BrowserRouter basename="NickTsalyn/task-pro-frontend">
+        <BrowserRouter basename="task-pro-frontend">
           <ThemeProvider theme={theme}>
             <App></App>
           </ThemeProvider>
