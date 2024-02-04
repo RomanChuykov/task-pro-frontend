@@ -1,7 +1,6 @@
 import { HomePage } from 'Pages/HomePage';
 import WelcomePage from 'Pages/WelcomePage';
 import Auth from 'components/Auth/Auth';
-import { AddColumnButton } from 'components/Button/AddColumnButton';
 import { HomeLayout, WelcomeLayout } from 'components/Layout/Layout';
 import { PrivateRoute } from 'components/PrivateRoute';
 import RegisterForm from 'components/Register/RegisterForm';
