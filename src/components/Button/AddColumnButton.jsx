@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import { AddColumnModal } from '../ColumnModal/AddColumnModal/AddColumnModal';
 import { EditColumnModal } from '../ColumnModal/EditColumnModal/EditColumnModal';
-import { Button } from 'components/Button/Button';
 import sprite from '../../images/icons.svg';
-// import styled from 'styled-components';
-import './AddColumnButton.css';
+
 import {
+  Main,
+  Section,
+  ModalShowButton,
+  AddColumnTitle,
+  AddColumnInput,
+  AddColumnBtn,
+  IconWhiteWrap,
+  IconVioletWrap,
   StyledSvgWhitePlus,
   StyledSvgDarkPlus,
 } from '../Button/AddColumnButton.styled';
@@ -19,61 +25,54 @@ export const AddColumnButton = () => {
   };
 
   return (
-    <main className="main">
-      <section className="section">
-        <button
+    <Main>
+      <Section>
+        <ModalShowButton
           type="submit"
-          className="modal-show-button"
           onClick={() => setModalAddColumnIsOpen(true)}
         >
-          <span className="iconVioletWrap">
+          <IconVioletWrap>
             <StyledSvgWhitePlus>
               <use xlinkHref={`${sprite}#icon-plus`}></use>
             </StyledSvgWhitePlus>
-          </span>
+          </IconVioletWrap>
           Add another column
-        </button>
+        </ModalShowButton>
 
-        <button
-          className="modal-show-button"
-          onClick={() => setModalEditColumnIsOpen(true)}
-        >
-          <span className="iconVioletWrap">
+        <ModalShowButton onClick={() => setModalEditColumnIsOpen(true)}>
+          <IconVioletWrap>
             <StyledSvgWhitePlus>
               <use xlinkHref={`${sprite}#icon-plus`}></use>
             </StyledSvgWhitePlus>
-          </span>
+          </IconVioletWrap>
           Edit Column
-        </button>
+        </ModalShowButton>
 
         <AddColumnModal
           isOpen={modalAddColumnIsOpen}
           onClose={() => setModalAddColumnIsOpen(false)}
           submitButton="Add"
         >
-          <div className="columnContainer">
-            <p className="addColumn_title">Add column</p>
+          <div>
+            <AddColumnTitle>Add column</AddColumnTitle>
             <form onSubmit={handlerTitleColumn}>
-              <input
+              <AddColumnInput
                 type="text"
                 name="title"
                 placeholder="Title"
-                className="addColumn_input"
                 autoFocus
               />
-              <Button type="submit" className="addColumn_btn">
-                <span className="iconWhiteWrap">
+
+              <AddColumnBtn type="submit">
+                <IconWhiteWrap>
                   <StyledSvgDarkPlus>
                     <use xlinkHref={`${sprite}#icon-plus`}></use>
                   </StyledSvgDarkPlus>
-                </span>
+                </IconWhiteWrap>
                 Add
-              </Button>
+              </AddColumnBtn>
             </form>
           </div>
-
-          {/* <h2>Поздравляем!</h2>
-          <p>Вы выиграли уникальный смартфон</p> */}
         </AddColumnModal>
 
         <EditColumnModal
@@ -81,31 +80,27 @@ export const AddColumnButton = () => {
           onClose={() => setModalEditColumnIsOpen(false)}
           submitButton="Add"
         >
-          <div className="container">
-            <p className="addColumn_title">Edit column</p>
+          <div>
+            <AddColumnTitle>Edit column</AddColumnTitle>
             <form onSubmit={handlerTitleColumn}>
-              <input
+              <AddColumnInput
                 type="text"
                 name="title"
                 placeholder="To Do"
-                className="addColumn_input"
                 autoFocus
               />
-              <Button type="submit" className="addColumn_btn">
-                <span className="iconWhiteWrap">
+              <AddColumnBtn type="submit">
+                <IconWhiteWrap>
                   <StyledSvgDarkPlus>
                     <use xlinkHref={`${sprite}#icon-plus`}></use>
                   </StyledSvgDarkPlus>
-                </span>
+                </IconWhiteWrap>
                 Add
-              </Button>
+              </AddColumnBtn>
             </form>
           </div>
-
-          {/* <h2>Ваше сообщение отправлено</h2>
-          <p>Мы свяжемся с вами в течение двух рабочих дней</p> */}
         </EditColumnModal>
-      </section>
-    </main>
+      </Section>
+    </Main>
   );
 };

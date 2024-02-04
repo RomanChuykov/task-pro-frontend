@@ -60,39 +60,3 @@
   transform: translateY(50px);
 }
 
-.modal-close-button {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 18px;
-  height: 18px;
-  border-color: transparent;
-  background-color: #fcfcfc;
-  transition: stroke 0.3s;
-}
-
-/* .modal-close-button:hover {
-  stroke: #161616;
-} */
-
-/* .modal-close-icon {
-  position: relative;
-  top: 14px;
-  right: 14px;
-  width: 28px;
-  height: 28px;
-  stroke: #161616;
-  transition: stroke 0.3s;
-} */
-
-/* .modal-submit-button {
-  width: 180px;
-  height: 48px;
-  background-color: #ff6700;
-  border-radius: 8px;
-  font-size: 18px;
-  color: #fff;
-  filter: drop-shadow(0 0 7px rgba(255, 103, 0, 0.3));
-  transition: background-color 0.3s;
-}
- */
