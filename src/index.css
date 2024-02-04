@@ -1,5 +1,5 @@
-@import-normalize; /* bring in normalize.css styles */
-
+@import-normalize;
+/* bring in normalize.css styles */
 
 /* poppins-regular - latin */
 @font-face {
@@ -7,7 +7,8 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/poppins-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('./fonts/poppins-v20-latin-regular.woff2') format('woff2'); 
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* poppins-500 - latin */
 @font-face {
@@ -15,7 +16,8 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
-  src: url('../fonts/poppins-v20-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('./fonts/poppins-v20-latin-500.woff2') format('woff2'); 
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* poppins-600 - latin */
 @font-face {
@@ -23,9 +25,9 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
-  src: url('../fonts/poppins-v20-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('./fonts/poppins-v20-latin-600.woff2') format('woff2'); 
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
 
 :root {
   --background: #3aa6b9;
@@ -38,12 +40,10 @@
 body {
   min-height: 100vh;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Poppins',
-    sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 
 p,
 h1,
@@ -74,6 +74,7 @@ a {
 
 button {
   cursor: pointer;
+  font-family: inherit;
 }
 
 .ReactModal__Overlay {
