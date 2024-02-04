@@ -8,8 +8,6 @@ import { Layout} from 'components/Layout/Layout';
 import { LogInForm } from 'components/LogInForm/LogInForm';
 import { PrivateRoute } from 'components/PrivateRoute';
 import RegisterForm from 'components/Register/RegisterForm';
-import { TaskCard } from 'components/TaskCard/TaskCard';
-
 
 export const App = () => {
   return (
@@ -20,13 +18,14 @@ export const App = () => {
           <Route path="register" element={<RegisterForm />} />
           <Route path="login" element={<LogInForm/>} />
         </Route>
-        </Route> 
-       {/* <PrivateRoute path="/home" redirectTo="/auth/login" component={<HomePage />} /> */}
-        <Route path="/home"  element={<HomePage />} >
-        <Route path="/home" element={<TaskCard/> } >
+        </Route>       
+        <Route 
+          path="/home" 
+          element={
+          <PrivateRoute  redirectTo="/auth/login" component={<HomePage />} />
+         }>
           <Route path="/home/:boardName" element={<ScreensPage/>}/>
-        </Route>
-      </Route>
+        </Route>     
       
     </Routes>
   );

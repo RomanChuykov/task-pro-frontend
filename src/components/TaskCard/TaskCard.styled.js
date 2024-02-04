@@ -6,10 +6,9 @@ export const TaskContainer = styled.div`
     gap: 14px;
     width: 335px;
     height: 154px;
-    margin: 0;
+    margin: 0 ;
     background-color: ${p => p.theme.colors.white};
-    border-radius: ${p => p.theme.radius.m};
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+    border-radius: ${p => p.theme.radius.m};    
 `;
 
 export const PrioritySeeContainer = styled.div`

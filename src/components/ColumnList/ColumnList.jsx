@@ -1,10 +1,13 @@
 import { ColumnListItem } from "components/ColumnListItem/ColumnListItem";
+import { ColumnListStyled } from "./ColumnList.styled";
 // приходить масив колонок
 //список колонок
 export const ColumnList = () => {
     return(
-        <ul>  
-            <ColumnListItem/>            
-        </ul>
+        <ColumnListStyled>  
+            <ColumnListItem/>
+            {/* <ColumnListItem/> 
+            <ColumnListItem/>                        */}
+        </ColumnListStyled>
     )
 };

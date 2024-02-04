@@ -1,37 +1,40 @@
 // import { useDispatch, useSelector } from "react-redux";
 
+import { CardList } from 'components/CardList/CardList';
 import sprite from '../../images/icons.svg'
-import { CardList } from "components/CardList/CardList";
-import { EditSVG } from "./ColumnListItem.styled";
+
+import { ColumnHeader, ColumnTitle, ColumnWrapper, EditBlock, EditButton, EditSVG } from "./ColumnListItem.styled";
 
 export const ColumnListItem = () => {
 
     // const dispatch = useDispatch();    
     // const items = useSelector(selectColumns);
     // const columns = [];
-    const columnTitle = 'Title column';
+    const title = ' Column Title';
     
     return(
-        <>
-          <h3>{columnTitle}</h3>
-          <div>
-            <button type="button">
+        <ColumnWrapper>
+         <ColumnHeader>
+         <ColumnTitle>{title}</ColumnTitle>
+          <EditBlock>
+            <EditButton type="button">
               <EditSVG>
                 <use xlinkHref={`${sprite}#icon-pencil-01`}/>
               </EditSVG>
-            </button>
-            <button type="button">
+            </EditButton>
+            <EditButton type="button">
               <EditSVG>
-                <use xlinkHref={`${sprite}#icon-container`}/>
+                <use xlinkHref={`${sprite}#icon-trash-04`}/>
               </EditSVG>
-            </button>
-          </div>
+            </EditButton>
+          </EditBlock>
+         </ColumnHeader>
           {/* {columns.map(column =>
             <li key={column.id}> */}
                 <CardList/>
-                <button>ButtonAddAnotherCard</button>                 
+                {/* <button>ButtonAddAnotherCard</button>                  */}
             {/* </li>
           ) }   */}
-        </>      
+        </ColumnWrapper>      
       );
 };
