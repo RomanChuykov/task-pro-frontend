@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import Modal from 'react-modal'
 import sprite from 'images/icons.svg'
-import './BoardModalBase.styled.css'
+import { StyledModal, Form, CloseButton, CloseSVG, BigHeader, TitleInput, SmallHeader, List, Radio, IconSVG, FuturePic, SubmitButton } from './BoardModalBase.styled'
 
 export const BoardModalBase = ({ isModalOpen, info, onCloseModal, action, SubmitForm }) => {
     const [title, setTitle] = useState(info.title)
@@ -26,70 +25,88 @@ export const BoardModalBase = ({ isModalOpen, info, onCloseModal, action, Submit
         SubmitForm({title, icon, background})
     }
 
+    function handleChange(e) {
+        setTitle(e.target.value)
+    }
+
     return (
-        <Modal
+        <StyledModal
             isOpen={isModalOpen}
-            overlayClassName={'modal-overlay'}
-            className={'modal-content'}
+            style={{
+                overlay: {
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    flexDirection: 'column',
+                    padding: '40px 10px 40px 10px',
+                    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                    overflow: 'hidden',
+                    overflowY: 'auto',
+                    transition: 'opacity 0.3s',
+                }
+              }}
             onRequestClose={onCloseModal}
             ariaHideApp={false}
         >
-            <button className="modal-close-button" onClick={close}>
-                <svg><use xlinkHref={`${sprite}#icon-x-close`}></use></svg>
-            </button>
+            <CloseButton onClick={close}>
+                <CloseSVG><use xlinkHref={`${sprite}#icon-x-close`}></use></CloseSVG>
+            </CloseButton>
 
-            <p className="modal-header">{action==='add' ? 'New' : 'Edit'} board</p>
+            <Form onSubmit={event => sub(event)}>
+                <BigHeader>{action==='add' ? 'New' : 'Edit'} board</BigHeader>
 
-            <form className="modal-form" onSubmit={event => sub(event)}>
-                <input
+                <TitleInput
                     id="title"
                     name='title'
                     placeholder='Title'
                     value={title}
-                    onChange={(event) => setTitle(event.target.value)}
-                    className='title-input'
+                    onChange={e => handleChange(e)}
                     required
                 />
 
-                <p className="lists-header">Icons</p>
-                <label className="icons-list">
+                <SmallHeader>Icons</SmallHeader>
+                <List>
                     {Icons.map((Icon, index) => (
                         <label key={index}>
-                            <input 
+                            <Radio 
                                 type="radio" 
-                                className='icon-radio' 
                                 name='icon'
                                 value={Icon.value}
+                                checked={Icon.value === icon ? true : false}
                                 onChange={() => setIcon(Icon.value)}>
-                            </input>
-                            <svg aria-hidden="true"><use xlinkHref={`${sprite}#${Icon.value}`}></use></svg>
+                            </Radio>
+                            <IconSVG aria-hidden="true"><use xlinkHref={`${sprite}#${Icon.value}`}></use></IconSVG>
                         </label>
                     ))}
-                </label>
+                </List>
 
-                <p className="lists-header">Background</p>
-                <label className='backs-list'>
+                <SmallHeader>Background</SmallHeader>
+                <List>
                     {Backgrounds.map((Background, index) => (
                         <label key={index}>
-                            <input 
+                            <Radio 
                                 type="radio" 
-                                className='background-radio' 
                                 name='background'
                                 value={Background.value}
+                                checked={Background.value === background ? true : false}
                                 onChange={() => setBackground(Background.value)}>
-                            </input>
-                            <span></span>
+                            </Radio>
+                            <FuturePic></FuturePic>
                         </label>
                     ))}
-                </label>
+                </List>
 
-                <button className='submit-button' type="submit">
-                    <span className='submit-icon-back'>
-                        <svg className='submit-icon'><use xlinkHref={`${sprite}#icon-plus`}></use></svg>
+                <SubmitButton type="submit">
+                    <span>
+                        <svg><use xlinkHref={`${sprite}#icon-plus`}></use></svg>
                     </span>
                     {action==='add' ? 'Create' : 'Edit'}
-                </button>
-            </form>
-        </Modal>
+                </SubmitButton>
+            </Form>
+        </StyledModal>
     )
   }

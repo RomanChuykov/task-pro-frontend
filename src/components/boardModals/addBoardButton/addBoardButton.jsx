@@ -20,8 +20,8 @@ const StyledButton = styled.button`
     border: none;
 
     &:hover {
-        background-color: rgba(157, 200, 136, 1);
-      }
+      background-color: rgba(157, 200, 136, 1);
+    }
 `
 
 export const AddBoardButton = ({ onClick }) => {

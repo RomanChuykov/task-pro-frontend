@@ -6,6 +6,7 @@ import { PrivateRoute } from 'components/PrivateRoute';
 import RegisterForm from 'components/Register/RegisterForm';
 import { Route, Routes } from 'react-router-dom';
 import { AddBoard } from 'components/boardModals/addBoard';
+import { EditBoard } from 'components/boardModals/editBoard';
 
 export const App = () => {
   return (
@@ -28,6 +29,7 @@ export const App = () => {
       
     </Routes>
     <AddBoard />
+    <EditBoard />
     </div>
   );
 };
