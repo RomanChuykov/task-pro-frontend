@@ -83,10 +83,16 @@ export const StyledLabel = styled.label`
 `;
 
 export const MessageError = styled(ErrorMessage)`
-  position: absolute;
+  margin-top: 3px;
+  padding-left: 14px;
+  color: #c04d4d;
+  font-size: 12px;
+
+  /* !!! Фіксив Pavlo. Нижча закоментована частина Олега - треба видалити бо баг. Вище дописав правильні стилі*/
+  /* position: absolute;
   left: 0;
   bottom: -14px;
   color: #c04d4d;
   font-size: 10px;
-  padding-left: 14px;
+  padding-left: 14px; */
 `;
