@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
+import styled from 'styled-components';
 
-export const HomePage = () => {
-  return (
-    <div>HomePage</div>
+const HomeWrapper = styled.div`
+  min-height: 100vh;
+  margin: 0 auto;    
+`;
+
+export default function HomePage () {
+  return (    
+      <HomeWrapper>    
+        <div>HeaderHomePage</div>( шапка HomePage)
+        <div>Sidebar</div>
+        <Suspense fallback={null}>
+          <Outlet />
+        </Suspense>    
+    </HomeWrapper>  
+    
   )
-}
+};
+
