@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ModalWrapper, CloseButton, InputWrapper, ModalTitle, Input, CommentInput, SendButton } from './needHelpModal.styled';
+import { ModalWrapper, CloseButton, InputWrapper, ModalTitle, Input, CommentInput, SendButton } from './NeedHelpModal.styled';
 
 export const NeedHelpModal = ({ onOpen, onClose }) => {
   const [email, setEmail] = useState('');

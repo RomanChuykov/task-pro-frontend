@@ -24,6 +24,8 @@ export const NeedHelp = ({ openModal }) => {
 // icon-help-circle
 
 /**
+import { NeedHelp } from 'components/needhelp/needhelp';
+import { NeedHelpModal } from 'components/needhelp/needHelpModal';
  begin
   const [isModalOpen, setIsModalOpen] = useState(false);
 
