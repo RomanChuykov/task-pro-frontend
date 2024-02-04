@@ -88,14 +88,14 @@ export const BoardModalBase = ({ isModalOpen, info, onCloseModal, action, Submit
                 <List>
                     {Backgrounds.map((Background, index) => (
                         <label key={index}>
-                            <Radio 
+                            <Radio
                                 type="radio" 
                                 name='background'
                                 value={Background.value}
                                 checked={Background.value === background ? true : false}
                                 onChange={() => setBackground(Background.value)}>
-                            </Radio>
                             <FuturePic></FuturePic>
+                            </Radio>
                         </label>
                     ))}
                 </List>

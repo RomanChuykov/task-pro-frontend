@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import sprite from 'images/icons.svg'
 
 const StyledSVG = styled.svg`
-    fill: ${props => props.theme.colors.darkBgn};
-    stroke: ${props => props.theme.colors.darkBgn};
-    width: 20px;
-    height: 20px;
+  fill: ${props => props.theme.colors.darkBgn};
+  stroke: ${props => props.theme.colors.darkBgn};
+  width: 20px;
+  height: 20px;
 `
 
 const StyledButton = styled.button`
