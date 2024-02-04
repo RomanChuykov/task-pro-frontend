@@ -20,3 +20,9 @@ export const StyledBurgerMenu = styled.button`
     display: none;
   }
 `;
+
+export const StyledSVGBurger = styled.svg`
+  stroke: rgb(22, 22, 22);
+  width: 100%;
+  height: 100%;
+`;
