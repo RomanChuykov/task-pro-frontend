@@ -21,7 +21,7 @@ export const NeedHelp = ({ openModal }) => {
     </HelpContainer>
   );
 }; 
-// icon-help-circle
+
 
 /**
 import { NeedHelp } from 'components/needhelp/needhelp';
