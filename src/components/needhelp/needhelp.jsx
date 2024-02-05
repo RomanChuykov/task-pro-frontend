@@ -1,6 +1,6 @@
 import React from 'react';
 // import sprite from '../../images/icons.svg';
-import { HelpContainer, HelpImage, HelpButton, HelpText, ButtonText, IconContainer, TaskProLink} from './Needhelp.styled';
+import { HelpContainer, HelpImage, HelpButton, HelpText, ButtonText, IconContainer, TaskProLink} from './NeedHelp.styled';
 import flowerImage from './../../images/flower.png';
 import { CiCircleQuestion } from "react-icons/ci";
 
