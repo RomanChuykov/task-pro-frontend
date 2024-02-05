@@ -3,8 +3,9 @@ import { createSlice } from '@reduxjs/toolkit';
 import {
   register,
   login,
+  refreshUser,
   // logout,
-  // refreshUser,
+
   // updateAvatar,
 } from './operations';
 
@@ -56,6 +57,17 @@ const authSlice = createSlice({
       state.isLoading = false;
       state.errorMessage = action.payload;
       state.isError = true;
+    },
+    [refreshUser.pending](state) {
+      state.isRefreshing = true;
+    },
+    [refreshUser.fulfilled](state, action) {
+      state.user = action.payload;
+      state.isLoggedIn = true;
+      state.isRefreshing = false;
+    },
+    [refreshUser.rejected](state) {
+      state.isRefreshing = false;
     },
   },
 });
