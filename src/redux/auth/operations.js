@@ -69,3 +69,20 @@ export const refreshUser = createAsyncThunk(
     }
   }
 );
+
+export const updateAvatar = createAsyncThunk(
+  'auth/updateAvatar', 
+  async(credentials, thunkAPI)=>{
+  try{
+  const state = thunkAPI.getState();
+const persistedToken = state.auth.token;
+if(persistedToken === null ){
+return thunkAPI.rejectWithValue('User not authenticated');
+}
+
+setAuthHeader(persistedToken);
+
+const res = await axios.patch('/api/users/avatar', credentials);
+return res.data;
+}catch(error){
+return thunkAPI.rejectWithValue(error.message)}})
