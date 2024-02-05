@@ -1,6 +1,7 @@
 import React from 'react';
 // import sprite from '../../images/icons.svg';
-import { HelpContainer, HelpImage, HelpButton, HelpText, ButtonText, IconContainer, TaskProLink} from './Needhelp.styled';
+import { HelpContainer, HelpImage, HelpButton, HelpText, ButtonText, IconContainer, TaskProLink} from './needhelp.styled';
+
 import flowerImage from './../../images/flower.png';
 import { CiCircleQuestion } from "react-icons/ci";
 
@@ -21,7 +22,7 @@ export const NeedHelp = ({ openModal }) => {
     </HelpContainer>
   );
 }; 
-// icon-help-circle
+
 
 /**
 import { NeedHelp } from 'components/needhelp/needhelp';

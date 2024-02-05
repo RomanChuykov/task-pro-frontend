@@ -1,11 +1,8 @@
 
-import { NeedHelp } from 'components/NeedHelp/NeedHelp';
+import { NeedHelp } from 'components/NeedHelp/needhelp';
 import sprite from '../../../images/icons.svg';
 import {  BoardList } from '../BoardList/BoardList';
 import { StyledCreateBtn, StyledCreateBtnIconWrapper, StyledCreateBtnWrapper, StyledLogoutBtn, StyledSVGLogout, StyledSVGPlus, StyledText } from './SidebarNav.styled';
-// import { NeedHelp } from 'components/needhelp/Needhelp';
-
-
 
 export const SidebarNav = () => {
   return (
