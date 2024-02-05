@@ -13,6 +13,10 @@ import {
 } from './LogInForm.styled.jsx';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+import { login } from 'redux/auth/operations';
 
 const LogInSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email!').required('Email is required!'),
@@ -20,7 +24,7 @@ const LogInSchema = Yup.object().shape({
     .min(8, 'Password is too short!')
     .matches(
       /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]+$/,
-      'The password must contain a minimum of 6 characters, at least one letter, one number, and one special character!'
+      'The password must contain a minimum of 8 characters, at least one letter, one number, and one special character!'
     )
     .max(64, 'Password must be at most 64 characters')
     .required('Password is required!'),
@@ -32,32 +36,30 @@ const initialValues = {
 };
 
 export const LogInForm = () => {
-  const handleSubmit = e => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    form.reset();
-  };
-
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
 
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
-  //  const onSubmit = (values, { resetForm }) => {
-  //    const {email, password } = values;
-  //    dispatch();
-  //    logIn({
-  //      email,
-  //      password,
-  //    });
-  //    resetForm();
-  //  };
+  const onSubmit = (values, { resetForm }) => {
+    const { email, password } = values;
+    dispatch(
+      login({
+        email,
+        password,
+      })
+    );
+    navigate('/home');
+    resetForm();
+  };
 
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={LogInSchema}
-      onSubmit={handleSubmit}
+      onSubmit={onSubmit}
     >
       <FormContainer>
         <InputContainer>

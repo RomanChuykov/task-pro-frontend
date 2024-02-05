@@ -30,7 +30,7 @@ const RegisterSchema = Yup.object().shape({
     .min(8, 'Password is too short!')
     .matches(
       /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]+$/,
-      'The password must contain a minimum of 6 characters, at least one letter, one number, and one special character!'
+      'The password must contain a minimum of 8 characters, at least one letter, one number, and one special character!'
     )
     .max(64, 'Password must be at most 64 characters')
     .required('Password is required!'),
@@ -60,7 +60,7 @@ const RegisterForm = () => {
       })
     );
 
-    navigate('/welcome');
+    navigate('/home');
     resetForm();
   };
   return (
