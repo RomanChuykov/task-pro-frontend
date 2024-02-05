@@ -20,6 +20,9 @@ const customStyles = {
     border: 'none',
     boxShadow:  'none',
     cursor: 'none',
+    display: 'flex',
+    // margin: 'auto 0px',
+    padding: '0'
 // borderRadius: ' 1px solid rgba(236, 237, 253, 0.4)'
   }),
   option: (provided, state) => ({

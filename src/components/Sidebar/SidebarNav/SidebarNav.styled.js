@@ -63,5 +63,22 @@ display: flex;
 gap: 14px;
 align-items: center;
 /* margin: auto 0; */
-
+margin-top: 24px;
 `
+
+export const StyledSVGPlus = styled.svg`
+  fill: ${p => p.theme.violetColors.accentColor};
+  stroke: rgb(255, 255, 255);
+  /* background-color:white; */
+  width: 20px;
+  height: 20px;
+  padding: 8px 10px;
+`;
+
+export const StyledSVGLogout = styled.svg`
+  fill: transparent;
+  stroke: white;
+  /* background-color:white; */
+  width: 32px;
+  height: 32px;
+`;

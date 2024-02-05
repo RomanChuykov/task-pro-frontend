@@ -8,6 +8,7 @@ export const Header = () => {
   return (
 
     <StyledHeaderWrapper>
+      {/* { window.innerWidth >= 1440 && <Sidebar/>} */}
       <Sidebar/>
         <StyledHeader>
       <BurgerMenu />
