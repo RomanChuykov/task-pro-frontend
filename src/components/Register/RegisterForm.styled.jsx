@@ -89,3 +89,8 @@ export const MessageError = styled(ErrorMessage)`
   color: #c04d4d;
   font-size: 12px;
 `;
+export const StyledInputContainer = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+`;
