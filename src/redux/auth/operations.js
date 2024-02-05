@@ -24,12 +24,12 @@ export const register = createAsyncThunk(
       setAuthHeader(res.data.token);
       return res.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.response.data.message);
     }
   }
 );
 
-export const Login = createAsyncThunk(
+export const login = createAsyncThunk(
   'auth/login',
   async (credentials, thunkAPI) => {
     try {
@@ -37,7 +37,7 @@ export const Login = createAsyncThunk(
       setAuthHeader(res.data.token);
       return res.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.response.data.message);
     }
   }
 );
@@ -47,7 +47,7 @@ export const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     await axios.post('/api/users/signout');
     clearAuthHeader();
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+    return thunkAPI.rejectWithValue(error.response.data.message);
   }
 });
 
@@ -65,24 +65,27 @@ export const refreshUser = createAsyncThunk(
 
       return res.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.response.data.message);
     }
   }
 );
 
 export const updateAvatar = createAsyncThunk(
-  'auth/updateAvatar', 
-  async(credentials, thunkAPI)=>{
-  try{
-  const state = thunkAPI.getState();
-const persistedToken = state.auth.token;
-if(persistedToken === null ){
-return thunkAPI.rejectWithValue('User not authenticated');
-}
+  'auth/updateAvatar',
+  async (credentials, thunkAPI) => {
+    try {
+      const state = thunkAPI.getState();
+      const persistedToken = state.auth.token;
+      if (persistedToken === null) {
+        return thunkAPI.rejectWithValue('User not authenticated');
+      }
 
-setAuthHeader(persistedToken);
+      setAuthHeader(persistedToken);
 
-const res = await axios.patch('/api/users/avatar', credentials);
-return res.data;
-}catch(error){
-return thunkAPI.rejectWithValue(error.message)}})
+      const res = await axios.patch('/api/users/avatar', credentials);
+      return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);
