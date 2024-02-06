@@ -31,7 +31,7 @@ import { NeedHelpModal } from 'components/needhelp/needHelpModal';
 
   const openModal = () => {
     setIsModalOpen(true);
-  };
+  }; 
  
   const closeModal = () => {
     setIsModalOpen(false);
