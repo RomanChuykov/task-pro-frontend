@@ -14,7 +14,7 @@ export default function HomePage () {
       <HomeWrapper>    
         <Header/>
         {/* <div>HeaderHomePage</div>( шапка HomePage) */}
-        <div>Sidebar</div>
+        {/* <div>Sidebar</div> */}
         <Suspense fallback={null}>
           <Outlet />
         </Suspense>    
