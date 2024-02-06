@@ -1,6 +1,7 @@
 // needhelp
 import React, { useState } from 'react';
 import HelpApp from "components/HelpApp/HelpApp.jsx"
+import { NeedHelpModal } from 'components/NeedHelpModal/NeedHelpModal.jsx';
 
 import { useDispatch } from 'react-redux';
 import sprite from '../../../images/icons.svg';
@@ -49,7 +50,7 @@ export const SidebarNav = () => {
       {/* <NeedHelp/> */}
       <HelpApp openModal={openModal} />
       {isModalOpen && <NeedHelpModal onClose={closeModal} />}
-      
+
       <StyledLogoutBtn type="button" onClick={() => dispatch(logout())}>
         <StyledSVGLogout>
           <use xlinkHref={`${sprite}#icon-login`}></use>
