@@ -1,4 +1,5 @@
 // import { NeedHelp } from 'components/NeedHelp/needhelp';
+import { useDispatch } from 'react-redux';
 import sprite from '../../../images/icons.svg';
 import { BoardList } from '../BoardList/BoardList';
 import {
@@ -10,6 +11,7 @@ import {
   StyledSVGPlus,
   StyledText,
 } from './SidebarNav.styled';
+import { logout } from 'redux/auth/operations';
 
 export const SidebarNav = () => {
   const dispatch = useDispatch();
@@ -34,7 +36,7 @@ export const SidebarNav = () => {
 
       {/* <NeedHelp/> */}
 
-      <StyledLogoutBtn>
+      <StyledLogoutBtn type="button" onClick={() => dispatch(logout())}>
         <StyledSVGLogout>
           <use xlinkHref={`${sprite}#icon-login`}></use>
         </StyledSVGLogout>
